@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,4 +9,20 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  email: string = '';
+  senha: string = '';
+  erro: string = '';
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  entrar() {
+    this.authService.login(this.email, this.senha).subscribe(usuario => {
+      if(usuario) {
+        this.erro = '';
+        this.router.navigate(['/interna']); // página protegida
+      } else {
+        this.erro = 'Email ou senha inválidos';
+      }
+    });
+  }
 }

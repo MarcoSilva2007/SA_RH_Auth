@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   // Função para oogar novo usuário 
-  login(credenciais: any): Observable<boolean> {
+  login(credenciais: any, senha: string): Observable<boolean> {
     return this.http
       .get<any[]>(
         // Passa o email e a senha por ser login 
