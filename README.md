@@ -42,10 +42,10 @@ Tecnologias que permitem o desenvolvimento rápido e contínuo do projeto:
 
 | Horas | Seg | Ter | Qua | Qui | Sex |
 |-------|-----|-----|-----|-----|-----|
-| 13h   | Divisão de trabalhos |     |     |     |     |
-| 14h   | Documentação, Figma, diagrama |     |     |     |     |
-| 15h   |     |     |     |     |     |
-| 16h   |     |     |     |     |     |
+| 13h   |     |     | Divisão de trabalhos    |     |     |
+| 14h   |     |     | Documentação, Figma, diagrama    |     |     |
+| 15h   |     |     | Foco no projeto    |     |     |
+| 16h   |     |     | Junção do que todos trabalharam    |     |     |
 
 ## Cronograma – 2° semana
 
