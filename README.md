@@ -51,7 +51,7 @@ Tecnologias que permitem o desenvolvimento rápido e contínuo do projeto:
 
 | Horas | Seg | Ter | Qua | Qui | Sex |
 |-------|-----|-----|-----|-----|-----|
-| 13h   |     |     |     |     |     |
-| 14h   |     |     |     |     |     |
-| 15h   |     |     |     |     |     |
-| 16h   |     |     |     | Entrega do projeto |     |
+| 13h   |     |     | Divisão de trabalhos    |     |     |
+| 14h   |     |     | Código    |     |     |
+| 15h   |     |     | Código    |     |     |
+| 16h   |     |     | Entrega do projeto    |     |     |
