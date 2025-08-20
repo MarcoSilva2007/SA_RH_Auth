@@ -17,7 +17,7 @@ export class Curriculo {
       idade: this.idade,
       linkedin: this.linkedin,
       github: this.github,
-      experiencia: this.experiencia
+      experiencia: this.experiencia 
     }
   }
 

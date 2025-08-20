@@ -1,3 +1,20 @@
 <app-header></app-header>
-<app-footer></app-footer>
+
+<div class="registro-container">
+  <h2>Crie sua conta</h2>
+  
+  <form (ngSubmit)="registrar()">
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text" name="nome" />
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="email" />
+
+    <label for="senha">Senha:</label>
+    <input id="senha" type="password" name="senha" />
+
+    <button type="submit">Registrar</button>
+  </form>
+</div>
+
 <router-outlet></router-outlet>
