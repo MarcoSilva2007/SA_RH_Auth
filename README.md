@@ -18,7 +18,7 @@ A aplicação deve permitir o CRUD de diferentes tipos de usuários com controle
 - **Administrador**: Login, cadastro, edição, exclusão e visualização de vagas.  
 
 ## Requisitos não-funcionais
-O sistema deve ser responsivo, seguro, intuitivo e atender dispositivos diferentes.
+O sistema deve ser responsivo, seguro e intuitivo.
 
 - Restrição de acesso por usuário.  
 - Implementação de LocalStorage.  
