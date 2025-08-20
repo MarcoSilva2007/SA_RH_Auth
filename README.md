@@ -9,7 +9,7 @@ Desenvolver metas claras para o fluxo do projeto.
 - **Mensurável**: Entregar uma aplicação funcional com protótipos, diagramas, código-fonte completo dentro do prazo.  
 - **Atingível**: Utilizar tecnologias conhecidas, divisão do grupo do trabalho.  
 - **Realista**: Criar um sistema de RH com autenticação, autorização e CRUD.  
-- **Prazo**: 2 semanas.  
+- **Tempo**: 2 semanas.  
 
 ## Requisitos funcionais
 A aplicação deve permitir o CRUD de diferentes tipos de usuários com controle de permissões.
