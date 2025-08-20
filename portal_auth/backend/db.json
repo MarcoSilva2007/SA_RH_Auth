@@ -70,5 +70,21 @@
       "github": "",
       "experiencia": ""
     }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "João",
+      "email": "joaodograu@gmail.com",
+      "senha": "1234"
+    }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "nome": "Admin",
+      "email": "admin@admin",
+      "senha": "admin1234"
+    }
   ]
 }

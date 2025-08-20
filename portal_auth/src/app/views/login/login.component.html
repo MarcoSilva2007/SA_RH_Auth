@@ -1,3 +1,19 @@
 <app-header></app-header>
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="entrar()">
+    <div>
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="email" name="email" required>
+    </div>
+    <div>
+      <label>Senha:</label>
+      <input type="password" [(ngModel)]="senha" name="senha" required>
+    </div>
+    <button type="submit">Entrar</button>
+  </form>
+  <p *ngIf="erro" class="erro">{{ erro }}</p>
+</div>
+
 <app-footer></app-footer>
 <router-outlet></router-outlet>
