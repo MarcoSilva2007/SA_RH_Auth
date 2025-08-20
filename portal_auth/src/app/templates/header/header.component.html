@@ -1,11 +1,13 @@
-<p>header works!</p>
 <nav class="navbar">
-  <a href="/">Curriculos e Vagas</a>
+  <a routerLink="/">Curriculos e Vagas</a>
   <div class="navItens">
-    <a href="/curriculos" class="navLink">Curriculos</a>
-    <a href="/vagas" class="navLink">Vagas</a>
-    <a href="/painel-vagas" class="navLink">Painel Vagas</a>
-    <a href="/painel-curriculos" class="navLink">Painel Curriculos</a>
-    <a href="/curriculos-list" class="navLink">Buscar</a>
+    <a routerLink="/curriculos" class="navLink">Curriculos</a>
+    <a routerLink="/vagas" class="navLink">Vagas</a>
+    <a routerLink="/painel-vagas" class="navLink">Painel Vagas</a>
+    <a routerLink="/painel-curriculos" class="navLink">Painel Curriculos</a>
+    <a routerLink="/curriculos-list" class="navLink">Buscar</a>
+    <a routerLink="/login" class="navLink"></a>
+    <a routerLink="/registro" class="navLink">Registrar</a>
   </div>
 </nav>
+<router-outlet></router-outlet>

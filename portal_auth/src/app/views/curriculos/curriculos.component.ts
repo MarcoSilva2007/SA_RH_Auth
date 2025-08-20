@@ -1,20 +1,29 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Curriculo } from 'src/app/models/curriculos.model';
+import { CurriculoService } from 'src/app/services/curriculos.service';
 
 @Component({
   selector: 'app-curriculos',
   templateUrl: './curriculos.component.html',
   styleUrls: ['./curriculos.component.scss']
 })
-export class CurriculosComponent {
-  curriculos: any[] = [];
+export class CurriculosComponent implements OnInit{
+  public curriculos: Curriculo[] = []; // vetor para armazenar os currículos do BD
 
-  constructor(private http: HttpClient) {}
+  constructor(private _curriculoService: CurriculoService) {}
 
-  ngOnInit() {
-    this.http.get<any[]>('URL_DO_SEU_BACKEND/curriculos')
-      .subscribe(data => {
-        this.curriculos = data;
-      });
+  ngOnInit(): void {
+    this.listarCurriculos();
+  }
+  listarCurriculos() {
+    this._curriculoService.getCurriculos().subscribe(
+      (e) => [
+        this.curriculos = e.map(
+          (curriculo) => { 
+            return Curriculo.fromMap(curriculo);
+          }
+        )
+      ]
+    )
   }
 }
