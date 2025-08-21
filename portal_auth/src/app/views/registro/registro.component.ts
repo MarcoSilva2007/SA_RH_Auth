@@ -16,7 +16,22 @@ export class RegistroComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  // Função simples para verificar se tem @
+  temArroba(email: string): boolean {
+    return email.includes('@');
+  }
+
   registrar() {
+    // Resetar mensagens
+    this.erro = '';
+    this.sucesso = '';
+
+    // Validar se tem @ no email
+    if (!this.temArroba(this.email)) {
+      this.erro = 'Por favor, insira um email válido com @!';
+      return;
+    }
+
     const novoUsuario = {
       nome: this.nome,
       email: this.email,

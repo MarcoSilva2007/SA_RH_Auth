@@ -68,6 +68,21 @@
     text-align: center;
   }
 }
+.registro-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #a0a0a0;
+
+    a {
+      color: #6c63ff;
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 
 /* Responsivo */
 @media (max-width: 500px) {

@@ -13,7 +13,11 @@
     <button type="submit">Entrar</button>
   </form>
   <p *ngIf="erro" class="erro">{{ erro }}</p>
+  <div class="registro-link">
+    Não tem uma conta? <a routerLink="/registro">Crie uma Conta</a>
+  </div>
 </div>
+
 
 <app-footer></app-footer>
 <router-outlet></router-outlet>

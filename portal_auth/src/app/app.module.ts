@@ -11,9 +11,10 @@ import { VagasComponent } from './views/vagas/vagas.component';
 import { HeaderComponent } from './templates/header/header.component';
 import { FooterComponent } from './templates/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; 
-
+import { HttpClientModule } from '@angular/common/http'; // ← IMPORTANTE
+import { FormsModule } from '@angular/forms';
+import { InternaAdminComponent } from './views/interna-admin/interna-admin.component'; 
+import { HeaderAdminComponent } from './templates/header-admin/header-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +25,15 @@ import { FormsModule } from '@angular/forms';
     CurriculosComponent,
     VagasComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    InternaAdminComponent,
+    HeaderAdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule, // ← DEVE ESTAR AQUI
     FormsModule
   ],
   providers: [],

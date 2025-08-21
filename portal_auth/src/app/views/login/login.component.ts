@@ -8,7 +8,6 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
   email: string = '';
   senha: string = '';
   erro: string = '';
@@ -16,10 +15,10 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   entrar() {
-    this.authService.login({ email: this.email, senha: this.senha}).subscribe(usuarios => {
-      if(usuarios) {
+    this.authService.login({ email: this.email, senha: this.senha }).subscribe(usuario => {
+      if(usuario) {
         this.erro = '';
-        this.router.navigate(['/interna']); // página protegida
+        this.router.navigate(['/interna']);
       } else {
         this.erro = 'Email ou senha inválidos';
       }

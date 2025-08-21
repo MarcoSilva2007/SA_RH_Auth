@@ -77,13 +77,31 @@
       "nome": "rita",
       "email": "lovelyrita@gmail.com",
       "senha": "lovelyrita"
+    },
+    {
+      "id": "60bd",
+      "nome": "Marco Silva",
+      "email": "marcoladesenvolvedor@gmail.com",
+      "senha": "1234"
+    },
+    {
+      "id": "d73c",
+      "nome": "Crippa ",
+      "email": "matheuscrippa@gmail.com",
+      "senha": "12344"
+    },
+    {
+      "id": "b30d",
+      "nome": "Crippa ",
+      "email": "matheuscrippa",
+      "senha": "12344"
     }
   ],
   "admin": [
     {
       "id": "1",
       "nome": "Admin",
-      "email": "admin@admin",
+      "email": "admin",
       "senha": "admin1234"
     }
   ]

@@ -6,25 +6,42 @@ import { RegistroComponent } from './views/registro/registro.component';
 import { InternaComponent } from './views/interna/interna.component';
 import { CurriculosComponent } from './views/curriculos/curriculos.component';
 import { VagasComponent } from './views/vagas/vagas.component';
-import { AuthGuard } from './guardas/auth.guard';
+import { AuthGuard } from './guardas/auth.guard'; // ← Importe o AuthGuard
+import { InternaAdminComponent } from './views/interna-admin/interna-admin.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
-  { path: 'curriculos', component: CurriculosComponent },
-  { path: 'vagas', component: VagasComponent },
 
-  // Rota protegida
-  { path: 'interna', component: InternaComponent, canActivate: [AuthGuard] },
+  // 🔒 ROTAS PROTEGIDAS - Só com login
+  {
+    path: 'interna',
+    component: InternaComponent,
+    canActivate: [AuthGuard], // ← Protegida
+  },
+  {
+    path: 'curriculos',
+    component: CurriculosComponent,
+    canActivate: [AuthGuard], // ← Protegida
+  },
+  {
+    path: 'vagas',
+    component: VagasComponent,
+    canActivate: [AuthGuard], // ← Protegida
+  },
+  {
+    path: 'interna-admin',
+    component: InternaAdminComponent,
+    canActivate: [AuthGuard], // ← Protegida
+  },
 
-  // rota coringa pra redirecionar caso não encontre
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

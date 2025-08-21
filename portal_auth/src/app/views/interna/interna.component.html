@@ -1,3 +1,57 @@
 <app-header></app-header>
+<div class="interna-container">
+  <header class="interna-header">
+    <h1>Bem-vindo, {{ usuario.nome }}! 👋</h1>
+    <button class="logout-btn" (click)="logout()">Sair</button>
+  </header>
+
+  <main class="interna-content">
+    <div class="welcome-card">
+      <h2>Área do Candidato</h2>
+      <p>Gerencie sua carreira e encontre oportunidades incríveis!</p>
+    </div>
+
+    <div class="actions-grid">
+      <div class="action-card" routerLink="/vagas">
+        <div class="action-icon">💼</div>
+        <h3>Vagas Disponíveis</h3>
+        <p>Explore todas as oportunidades de emprego</p>
+      </div>
+
+      <div class="action-card" routerLink="/curriculos">
+        <div class="action-icon">📝</div>
+        <h3>Meu Currículo</h3>
+        <p>Gerencie e atualize seu currículo</p>
+      </div>
+
+      <div class="action-card">
+        <div class="action-icon">🔔</div>
+        <h3>Notificações</h3>
+        <p>Suas candidaturas e alertas</p>
+      </div>
+
+      <div class="action-card">
+        <div class="action-icon">📊</div>
+        <h3>Dashboard</h3>
+        <p>Acompanhe suas estatísticas</p>
+      </div>
+    </div>
+
+    <div class="user-info">
+      <h3>Suas Informações</h3>
+      <div class="info-grid">
+        <div class="info-item">
+          <strong>Nome:</strong> {{ usuario.nome }}
+        </div>
+        <div class="info-item">
+          <strong>Email:</strong> {{ usuario.email }}
+        </div>
+        <div class="info-item">
+          <strong>ID:</strong> {{ usuario.id }}
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
 <app-footer></app-footer>
 <router-outlet></router-outlet>
