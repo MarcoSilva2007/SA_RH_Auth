@@ -75,7 +75,7 @@
     {
       "id": "1",
       "nome": "João",
-      "email": "joaodograu@gmail.com",
+      "email": "joao@gmail.com",
       "senha": "1234"
     }
   ],
@@ -87,4 +87,5 @@
       "senha": "admin1234"
     }
   ]
+
 }
