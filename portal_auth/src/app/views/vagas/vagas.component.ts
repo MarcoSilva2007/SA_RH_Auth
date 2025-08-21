@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Vaga } from 'src/app/models/vaga.model';
 import { VagasService } from 'src/app/services/vagas.service';
 
+
 @Component({
   selector: 'app-vagas',
   templateUrl: './vagas.component.html',
