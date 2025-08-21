@@ -12,34 +12,24 @@ export class AuthService {
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  // Função para registrar um usuário
   registrar(usuario: any): Observable<any> {
-    // Checa se o usuario eciste contando o quanto de ususarios existe
     return this.http.get<any[]>(`${this.apiUrl}?email=${usuario.email}`).pipe(
       switchMap((res) => {
-        // Se o email já existe
         if (res.length > 0) {
-          // Cria um erro para o sistema, e para que o erro seja resolvido, roda a função dentro do trycatch 
-          return throwError(() => new Error('Usurário Já cadastrado')); // Para o programa aqui se o usuário já existir
+          return throwError(() => new Error('Usuário Já cadastrado')); 
         }
-        // Se o email não existe no sistema bd, cria um novo usuário
         return this.http.post<any>(this.apiUrl, usuario);
       })
     );
   }
 
-  // Função para oogar novo usuário 
-  login(credenciais: any, senha: string): Observable<boolean> {
+  login(credenciais: { email: string, senha: string }): Observable<boolean> {
     return this.http
-      .get<any[]>(
-        // Passa o email e a senha por ser login 
-        `${this.apiUrl}?email=${credenciais.email}$senha=${credenciais.senha}`
-      )
-      .pipe(
-        map((usuario) => {
-          if (usuario.length > 0) {
+      .get<any[]>(`${this.apiUrl}?email=${credenciais.email}&senha=${credenciais.senha}`).pipe(
+        map((usuarios) => {
+          if (usuarios.length > 0) {
             // Se o usuário ja existe, armazena no local storage, que seria no armazenamento local do navegador
-            localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(usuario[0]));
+            localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(usuarios[0]));
             return true;
           }
           // Caso nao seja encotrado retorna falso, ou seja para a pagina de login
