@@ -16,8 +16,8 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   entrar() {
-    this.authService.login(this.email, this.senha).subscribe(usuario => {
-      if(usuario) {
+    this.authService.login({ email: this.email, senha: this.senha}).subscribe(usuarios => {
+      if(usuarios) {
         this.erro = '';
         this.router.navigate(['/interna']); // página protegida
       } else {
