@@ -1,55 +1,107 @@
-.listar-vagas{
+.listar-vagas {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  flex-direction: column;
+  padding: 20px;
+
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
   
+  .button {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 20px;
+}
 
-  .card{
+.button .curriculo {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 17px;
+  width: 180px;
+  padding: 12px 32px;
+  background-color: #002d62;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.295);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button .curriculo:hover {
+  background-color: #001329;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+  .container-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .card {
+    padding: 20px;
+    width: 50vh;
     background-color: #fff;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: 2px solid #002d62;
+    border-radius: 12px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.295);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 18rem;
-    margin: 10px;
 
-    &:hover{
+    &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-    img{
+
+    img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 1px solid #aaa;
+      height: 80px; 
+      object-fit: contain;
+      background-color: #f4f4f4; 
     }
-    .card-body{
-      padding: 1rem;
 
-      h5.card-title{
-        color: #333;
-        font-size: 1.5rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
+    .card-body {
+      padding: 10px;
+
+      .card-title {
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 1.1rem;
+        color: #002d62;
+        font-weight: bold;
+        margin: 4px 0;
       }
 
-      p.card-text{
-        color: #555;
-        font-size: 0.8rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
-      }
-      p.card-text:last-child{
-        margin-bottom: 0; //remove a margim da ultima linha
+      .card-text {
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 0.85rem;
+        color: #444;
+        margin-bottom: 4px;
+
+        &:last-child {
+          font-weight: 500;
+          color: #222;
+        }
       }
     }
   }
 }
 
-.rodape{
-  height: 10vh;
+.titulo-vagas {
+  font-size: 1.8rem;
+  color: #0a2a4f;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 7px;
+  text-align: left; 
+  font-family: 'Segoe UI', sans-serif;
+  padding-left: 10px; 
+  width: 100%;
 }
