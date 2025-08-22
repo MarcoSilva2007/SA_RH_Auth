@@ -1,0 +1,52 @@
+<div class="admin-container">
+  <nav class="navbar">
+    <a routerLink="/" class="logo">RH Connect</a>
+    <div class="navItens">
+      <a routerLink="/interna-admin" class="navLink">Currículos</a>
+      <a routerLink="/vagas-admin" class="navLink active">Vagas</a>
+      <a (click)="logout()" class="navLink">Sair</a>
+    </div>
+  </nav>
+
+  <section class="vagas-section">
+    <div class="vagas-header">
+      <h2>Editar/Excluir</h2>
+      <button (click)="mostrarForm = !mostrarForm" class="btn-cadastrar">Cadastrar</button>
+    </div>
+
+    <!-- LISTAGEM -->
+    <table *ngIf="!mostrarForm">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Salário</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vaga of vagas; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ vaga.nome }}</td>
+          <td>{{ vaga.descricao }}</td>
+          <td>{{ vaga.salario || '-' }}</td>
+          <td>
+            <button (click)="editarVaga(i)">✏️</button>
+            <button (click)="excluirVaga(i)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- FORMULÁRIO DE CADASTRO -->
+    <div *ngIf="mostrarForm" class="form-cadastro">
+      <h3>Cadastrar Vaga</h3>
+      <input type="text" [(ngModel)]="novaVaga.id" placeholder="ID" />
+      <input type="text" [(ngModel)]="novaVaga.nome" placeholder="Nome" />
+      <input type="number" [(ngModel)]="novaVaga.salario" placeholder="Salário" />
+      <textarea [(ngModel)]="novaVaga.descricao" placeholder="Descrição"></textarea>
+      <button (click)="addVaga()">Cadastrar Vaga</button>
+    </div>
+  </section>
+</div>

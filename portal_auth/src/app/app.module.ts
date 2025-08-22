@@ -10,11 +10,11 @@ import { CurriculosComponent } from './views/curriculos/curriculos.component';
 import { VagasComponent } from './views/vagas/vagas.component';
 import { HeaderComponent } from './templates/header/header.component';
 import { FooterComponent } from './templates/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; // ← IMPORTANTE
-import { FormsModule } from '@angular/forms';
-import { InternaAdminComponent } from './views/interna-admin/interna-admin.component'; 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './views/interna-admin/interna-admin.component'; 
 import { HeaderAdminComponent } from './templates/header-admin/header-admin.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,15 +26,15 @@ import { HeaderAdminComponent } from './templates/header-admin/header-admin.comp
     VagasComponent,
     HeaderComponent,
     FooterComponent,
-    InternaAdminComponent,
-    HeaderAdminComponent
+    HeaderAdminComponent,
+    AdminComponent   // ← adicionado corretamente
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     ReactiveFormsModule,
-    HttpClientModule, // ← DEVE ESTAR AQUI
-    FormsModule
+    FormsModule,      // ← necessário para ngModel
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

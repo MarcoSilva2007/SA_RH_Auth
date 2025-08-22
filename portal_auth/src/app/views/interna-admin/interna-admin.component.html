@@ -1,1 +1,21 @@
-<p>interna-admin works!</p>
+<div class="admin-container">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a routerLink="/" class="logo">RH Connect</a>
+    <div class="navItens">
+      <a routerLink="/interna-admin" class="navLink active">Currículos</a>
+      <a routerLink="/vagas-admin" class="navLink">Vagas</a>
+      <a (click)="logout()" class="navLink">Sair</a>
+    </div>
+  </nav>
+  
+  <!-- Currículos -->
+  <section class="curriculos-section">
+    <h2>Currículos</h2>
+    <div class="curriculo-card" *ngFor="let c of curriculos">
+      <h3>{{ c.nome }}</h3>
+      <p>{{ c.experiencia }}</p>
+      <button>Ver Currículo</button>
+    </div>
+  </section>
+</div>

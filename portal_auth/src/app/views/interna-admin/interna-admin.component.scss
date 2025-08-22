@@ -1,0 +1,143 @@
+.admin-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #002D62;
+  }
+
+  .navItens {
+    display: flex;
+    gap: 1.5rem;
+
+    .navLink {
+      color: #002D62;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: 0.3s;
+
+      &.active, &:hover {
+        background-color: #002D62;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.curriculos-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  .curriculo-card {
+    border: 2px solid #002D62;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 200px;
+    background-color: #fff;
+
+    button {
+      margin-top: 10px;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #002D62;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #004080;
+      }
+    }
+  }
+}
+
+.vagas-section {
+  margin-top: 2rem;
+
+  .vagas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .btn-cadastrar {
+      background-color: #002D62;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #004080;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    th, td {
+      border: 1px solid #002D62;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    button {
+      background-color: #002D62;
+      color: #fff;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      margin-right: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #004080;
+      }
+    }
+  }
+
+  .form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input, textarea {
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #002D62;
+    }
+
+    button {
+      background-color: #002D62;
+      color: #fff;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #004080;
+      }
+    }
+  }
+}

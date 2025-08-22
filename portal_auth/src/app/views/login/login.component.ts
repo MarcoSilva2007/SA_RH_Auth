@@ -16,12 +16,21 @@ export class LoginComponent {
 
   entrar() {
     this.authService.login({ email: this.email, senha: this.senha }).subscribe(usuario => {
-      if(usuario) {
+      if (usuario) {
         this.erro = '';
-        this.router.navigate(['/interna']);
+
+        // Redireciona dependendo da permissão
+        if (usuario.permissao === 'admin') {
+          this.router.navigate(['/interna-admin']); // página admin
+        } else {
+          this.router.navigate(['/interna']); // página de usuário comum
+        }
+
       } else {
         this.erro = 'Email ou senha inválidos';
       }
+    }, erro => {
+      this.erro = 'Erro ao tentar logar. Tente novamente.';
     });
   }
 }

@@ -95,14 +95,21 @@
       "nome": "Crippa ",
       "email": "matheuscrippa",
       "senha": "12344"
+    },
+    {
+      "id": "9039",
+      "nome": "Anick da silva lima",
+      "email": "anickmurilomeyretuti@gmail.com",
+      "senha": "Miickk09"
     }
   ],
   "admin": [
     {
       "id": "1",
       "nome": "Admin",
-      "email": "admin",
-      "senha": "admin1234"
+      "email": "admin@rh.connect.com",
+      "senha": "admin1234",
+      "permissao": "admin"
     }
   ]
 }
