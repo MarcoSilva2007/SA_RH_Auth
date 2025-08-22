@@ -1,18 +1,26 @@
 <app-header></app-header>
 <section class="listar-vagas">
-  <!-- property do data binding *ngFor -->
-   <div *ngFor="let vaga of vagas">
-    <div class="card">
-      <img src="assets\img\vagas\{{vaga.foto}}" alt="...">
+  <div class="top-section">
+  <h2 class="titulo-vagas">Vagas De Empregos</h2>
+  <div class="button">
+    <button class="curriculo">Criar curriculo</button>
+  </div>
+  </div>
+  
+  <div class="container-cards">
+    <div *ngFor="let vaga of vagas" class="card">
       <div class="card-body">
-        <h5 class="card-title">Código da Vaga: {{vaga.id}}</h5>
-        <h5 class="card-title">Vaga: {{vaga.nome}}</h5>
-        <p class="card-text">Descrição da Vaga: {{vaga.descricao}}</p>
-        <p class="card-text">Salário: R$ {{vaga.salario}}</p>
+        <h5 class="card-title">Código da Vaga: {{ vaga.id }}</h5>
+        <h5 class="card-title">Vaga: {{ vaga.nome }}</h5>
+        <p class="card-text">Descrição da Vaga: {{ vaga.descricao }}</p>
+        <p class="card-text">Salário: R$ {{ vaga.salario }}</p>
       </div>
     </div>
-   </div>
+  </div>
 </section>
-<div class="rodape"></div>
+
+<br>
+<br>
+<br>
 <app-footer></app-footer>
 <router-outlet></router-outlet>

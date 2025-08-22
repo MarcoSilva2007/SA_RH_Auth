@@ -1,54 +1,67 @@
-.navbar{
+* {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.header-content {
+  width: 100%;
+  margin: 0;
+  padding: 15px 20px;
+  background: #002d62; 
+  color: white;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #f4f4f4;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  background-color: #f8f8f8;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 2rem;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
 
-  a{
-    text-decoration: none;
-    color: #777;
+  > a {
+    font-family: 'segoe ui', sans-serif;
+    font-size: 1.5rem;
     font-weight: bold;
+    color: #0a2a4f;
+    text-decoration: none;
   }
 
-  .navItens{
+  .navItens {
+    font-family: 'segoe ui', sans-serif;
     display: flex;
-    gap: 1.5rem;
+    gap: 10px;
 
-    .navLink{
-      color: #0077ff;
-      padding: 0.5rem 0;
-      transition: color 0.3s ease; //trasição suave da cor
+    .navLink {
+      padding: 10px 20px;
+      border: 2px solid #0a2a4f;
+      border-radius: 5px;
+      color: #0a2a4f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s ease, color 0.2s ease;
 
-      &:hover{
-        color: #0056b3;
+      &:hover {
+        color: #ffffff;
+        background-color: #0a2a4f;
       }
-    }
-  }
 
-  //media Query => telas menores
-  @media (max-width: 800px) {
-    flex-direction: columns;
-    align-items: flex-start;
-    padding: 1rem;
-
-    .navItens{
-      flex-direction: column;
-      width: 100%;
-      gap: 0;
-      margin-top: 1rem;
-
-      .navLink{
-        padding: 0.8rem 0;
-        border-top: 1px solid rgba(0,0,0,0.05);
-      }
-      &:last-child{
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+      &.active {
+        background-color: #0a2a4f;
+        color: #ffffff;
       }
     }
   }
 }
-

@@ -1,17 +1,24 @@
+:host {
+  display: block;
+  background-color: #002d62;
+  min-height: 100vh;
+}
+
 .login-container {
   max-width: 400px;
   margin: 80px auto;
-  padding: 40px;
-  background-color: #1e1e2f;
+  padding: 42px;
+  margin-top: 45px;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  color: #fff;
+  color: #002d62;
   font-family: 'Segoe UI', sans-serif;
 
   h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #f0f0f0;
+    color: #002d62;
   }
 
   form {
@@ -30,33 +37,36 @@
 
       input {
         padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #555;
-        background-color: #2a2a3f;
-        color: #fff;
+        border-radius: 15px;
+        border: 2px solid #002d62;
+        background-color: #ffffff;
+        color: #000000;
         font-size: 16px;
         transition: 0.3s;
 
         &:focus {
           outline: none;
-          border-color: #6c63ff;
+          border-color: #001329;
           box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
         }
       }
     }
 
     button {
+      font-size: 16px;
+      align-self: center;
       padding: 12px;
+      width: 30vh;
       border: none;
-      border-radius: 8px;
-      background-color: #6c63ff;
+      border-radius: 20px;
+      background-color: #002d62;
       color: #fff;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
 
       &:hover {
-        background-color: #5952d4;
+        background-color: #001329;
       }
     }
   }
@@ -71,10 +81,10 @@
 .registro-link {
     text-align: center;
     margin-top: 1rem;
-    color: #a0a0a0;
+    color: #757575;
 
     a {
-      color: #6c63ff;
+      color: #002d62;
       text-decoration: none;
       font-weight: 600;
 
