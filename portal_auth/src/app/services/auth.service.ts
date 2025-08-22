@@ -12,41 +12,67 @@ export class AuthService {
 
   constructor(private router: Router, private http: HttpClient) {}
 
+  // Registrar novo usuário
   registrar(usuario: any): Observable<any> {
     return this.http.get<any[]>(`${this.apiUrl}?email=${usuario.email}`).pipe(
       switchMap((res) => {
         if (res.length > 0) {
-          return throwError(() => new Error('Usuário Já cadastrado')); 
+          return throwError(() => new Error('Usuário já cadastrado'));
         }
         return this.http.post<any>(this.apiUrl, usuario);
       })
     );
   }
 
-  login(credenciais: { email: string, senha: string }): Observable<any> {
-    return this.http
-      .get<any[]>(`${this.apiUrl}?email=${credenciais.email}&senha=${credenciais.senha}`)
-      .pipe(
-        map((usuarios) => {
-          if (usuarios.length > 0) {
-            localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(usuarios[0]));
-            return usuarios[0];
-          }
-          return null;
-        })
-      );
+  // Login
+  login(credenciais: { email: string; senha: string }): Observable<any> {
+    const admin = {
+      id: '1',
+      nome: 'Admin',
+      email: 'admin@rh.connect.com',
+      senha: 'admin1234',
+      permissao: 'admin',
+    };
+
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((usuarios) => {
+        // Verificar se é o admin
+        if (
+          credenciais.email === admin.email &&
+          credenciais.senha === admin.senha
+        ) {
+          localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(admin));
+          return admin;
+        }
+
+        // Procurar usuário normal
+        const usuario = usuarios.find(
+          (u) => u.email === credenciais.email && u.senha === credenciais.senha
+        );
+
+        if (usuario) {
+          localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(usuario));
+          return usuario;
+        }
+
+        return null;
+      })
+    );
   }
 
-  logout() {
+  // Logout
+  logout(): void {
     localStorage.removeItem(this.CHAVE_AUTH);
     this.router.navigate(['/login']);
   }
 
+  // Verifica se o usuário está autenticado
   estaAutenticado(): boolean {
     return !!localStorage.getItem(this.CHAVE_AUTH);
   }
 
+  // Retorna o usuário logado
   usuarioAtual(): any {
-    return JSON.parse(localStorage.getItem(this.CHAVE_AUTH) || '{}');
+    return JSON.parse(localStorage.getItem(this.CHAVE_AUTH) || 'null');
   }
 }
