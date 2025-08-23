@@ -3,19 +3,64 @@
   <nav class="navbar">
     <a routerLink="/" class="logo">RH Connect</a>
     <div class="navItens">
-      <a routerLink="/interna-admin" class="navLink active">Currículos</a>
-      <a routerLink="/vagas-admin" class="navLink">Vagas</a>
+      <a (click)="setAba('curriculos')" class="navLink" [class.active]="abaAtiva === 'curriculos'">Currículos</a>
+      <a (click)="setAba('vagas')" class="navLink" [class.active]="abaAtiva === 'vagas'">Vagas</a>
       <a (click)="logout()" class="navLink">Sair</a>
     </div>
   </nav>
-  
+
   <!-- Currículos -->
-  <section class="curriculos-section">
+  <section *ngIf="abaAtiva === 'curriculos'" class="curriculos-section">
     <h2>Currículos</h2>
     <div class="curriculo-card" *ngFor="let c of curriculos">
       <h3>{{ c.nome }}</h3>
       <p>{{ c.experiencia }}</p>
       <button>Ver Currículo</button>
+    </div>
+  </section>
+
+  <!-- Vagas -->
+  <section *ngIf="abaAtiva === 'vagas'" class="vagas-section">
+    <div class="vagas-header">
+      <h2>Vagas</h2>
+      <button class="btn-cadastrar" (click)="cadastrarNovaVaga()">
+        {{ mostrarForm ? 'Voltar' : 'Cadastrar Vaga' }}
+      </button>
+    </div>
+
+    <!-- Lista de Vagas -->
+    <table *ngIf="!mostrarForm">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Salário</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vaga of vagas">
+          <td>{{ vaga.id }}</td>
+          <td>{{ vaga.nome }}</td>
+          <td>{{ vaga.descricao }}</td>
+          <td>R$ {{ vaga.salario }}</td>
+          <td>
+            <button (click)="editarVaga(vaga)">✏️</button>
+            <button (click)="excluirVaga(vaga.id)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Formulário de cadastro/edição -->
+    <div *ngIf="mostrarForm" class="form-cadastro">
+      <h3>{{ novaVaga.id === 0 ? 'Cadastrar Vaga' : 'Editar Vaga' }}</h3>
+      <input type="text" [(ngModel)]="novaVaga.nome" placeholder="Nome" />
+      <input type="text" [(ngModel)]="novaVaga.foto" placeholder="Foto (URL)" />
+      <textarea [(ngModel)]="novaVaga.descricao" placeholder="Descrição"></textarea>
+      <input type="number" [(ngModel)]="novaVaga.salario" placeholder="Salário" />
+      <button (click)="salvarVaga()">{{ novaVaga.id === 0 ? 'Cadastrar' : 'Salvar Alterações' }}</button>
     </div>
   </section>
 </div>
