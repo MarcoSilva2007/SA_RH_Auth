@@ -7,7 +7,6 @@ import { InternaComponent } from './views/interna/interna.component';
 import { AdminComponent } from './views/interna-admin/interna-admin.component';
 import { CurriculosComponent } from './views/curriculos/curriculos.component';
 import { VagasComponent } from './views/vagas/vagas.component';
-import { AdminVagasComponent } from './views/vagas-admin/admin-vagas.component'; // <- import adicionado
 import { AuthGuard } from './guardas/auth.guard';
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
 
   // Painel admin
   { path: 'interna-admin', component: AdminComponent, canActivate: [AuthGuard] },
-  { path: 'admin-vagas', component: AdminVagasComponent, canActivate: [AuthGuard] }, // <- nova rota
 
   { path: '**', redirectTo: 'home' },
 ];

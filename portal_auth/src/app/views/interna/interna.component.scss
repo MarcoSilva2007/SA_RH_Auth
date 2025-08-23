@@ -1,6 +1,6 @@
 .interna-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #002D62 0%, #f8f8f8 100%);
   padding: 20px;
 }
 
@@ -29,7 +29,7 @@
 
   &:hover {
     background: white;
-    color: #667eea;
+    color: #002D62;
   }
 }
 
@@ -117,7 +117,7 @@
   padding: 15px;
   background: #f8f9fa;
   border-radius: 8px;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid #002D62;
 
   strong {
     color: #333;
