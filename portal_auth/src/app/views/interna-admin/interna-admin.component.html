@@ -10,14 +10,20 @@
   </nav>
 
   <!-- Currículos -->
-  <section *ngIf="abaAtiva === 'curriculos'" class="curriculos-section">
-    <h2>Currículos</h2>
-    <div class="curriculo-card" *ngFor="let c of curriculos">
-      <h3>{{ c.nome }}</h3>
-      <p>{{ c.experiencia }}</p>
-      <button>Ver Currículo</button>
+  <section *ngIf="abaAtiva === 'curriculos'" class="listar-curriculos">
+  <h2>Currículos</h2>
+  <div class="container-cards">
+    <div class="card" *ngFor="let c of curriculos">
+      <img [src]="c.foto || 'https://via.placeholder.com/150'" alt="Foto do candidato" />
+      <div class="card-body">
+        <h3 class="card-title">{{ c.nome }}</h3>
+        <p class="card-text">{{ c.experiencia }}</p>
+        <p class="card-text">{{ c.email }}</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Vagas -->
   <section *ngIf="abaAtiva === 'vagas'" class="vagas-section">
