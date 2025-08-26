@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 interface Curriculo {
+foto: any;
+email: any;
   nome: string;
   experiencia: string;
 }
@@ -24,12 +26,12 @@ export class InternaAdminComponent implements OnInit {
   abaAtiva: 'curriculos' | 'vagas' = 'curriculos';
 
   curriculos: Curriculo[] = [
-    { nome: 'João Oliveira Campos', experiencia: 'Atividades de Recrutamento' },
-    { nome: 'Ântonio Pereira Albuquerque', experiencia: 'Recrutamento e Seleção' },
-    { nome: 'Juliana Ferreira Rodrigues', experiencia: 'Departamento Pessoal' },
-    { nome: 'Guilherme Da Silva', experiencia: 'Gestão de Pessoas' },
-    { nome: 'Anna Carolyna De Lima', experiencia: 'Generalista de RH' },
-    { nome: 'Marcelina Santos de Souza', experiencia: 'Comunicação e Relação Interpessoal' },
+    { foto: '', email: 'joao.campos@email.com', nome: 'João Oliveira Campos', experiencia: 'Atividades de Recrutamento' },
+    { foto: '', email: 'antonio.albuquerque@email.com', nome: 'Ântonio Pereira Albuquerque', experiencia: 'Recrutamento e Seleção' },
+    { foto: '', email: 'juliana.rodrigues@email.com', nome: 'Juliana Ferreira Rodrigues', experiencia: 'Departamento Pessoal' },
+    { foto: '', email: 'guilherme.silva@email.com', nome: 'Guilherme Da Silva', experiencia: 'Gestão de Pessoas' },
+    { foto: '', email: 'anna.lima@email.com', nome: 'Anna Carolyna De Lima', experiencia: 'Generalista de RH' },
+    { foto: '', email: 'marcelina.souza@email.com', nome: 'Marcelina Santos de Souza', experiencia: 'Comunicação e Relação Interpessoal' },
   ];
 
   vagas: Vaga[] = [
