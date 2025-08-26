@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminComponent } from './interna-admin.component';
+import { InternaAdminComponent } from './interna-admin.component';
 
 describe('InternaAdminComponent', () => {
-  let component: AdminComponent;
-  let fixture: ComponentFixture<AdminComponent>;
+  let component: InternaAdminComponent;
+  let fixture: ComponentFixture<InternaAdminComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdminComponent]
+      declarations: [InternaAdminComponent]
     });
-    fixture = TestBed.createComponent(AdminComponent);
+    fixture = TestBed.createComponent(InternaAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,12 +1,13 @@
 <app-header></app-header>
+
 <section class="listar-vagas">
   <div class="top-section">
-  <h2 class="titulo-vagas">Vagas De Empregos</h2>
-  <div class="button">
-    <button class="curriculo">Criar curriculo</button>
+    <h2 class="titulo-vagas">Vagas de Empregos</h2>
+    <div class="button">
+      <button class="curriculo" routerLink="/curriculo">Criar currículo</button>
+    </div>
   </div>
-  </div>
-  
+
   <div class="container-cards">
     <div *ngFor="let vaga of vagas" class="card">
       <div class="card-body">
@@ -19,8 +20,4 @@
   </div>
 </section>
 
-<br>
-<br>
-<br>
 <app-footer></app-footer>
-<router-outlet></router-outlet>

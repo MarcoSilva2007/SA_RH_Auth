@@ -19,7 +19,7 @@ interface Vaga {
   templateUrl: './interna-admin.component.html',
   styleUrls: ['./interna-admin.component.scss']
 })
-export class AdminComponent implements OnInit {
+export class InternaAdminComponent implements OnInit {
 
   abaAtiva: 'curriculos' | 'vagas' = 'curriculos';
 
