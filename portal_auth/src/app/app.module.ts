@@ -12,7 +12,7 @@ import { HeaderComponent } from './templates/header/header.component';
 import { FooterComponent } from './templates/footer/footer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AdminComponent } from './views/interna-admin/interna-admin.component'; 
+import { InternaAdminComponent } from './views/interna-admin/interna-admin.component'; 
 import { HeaderAdminComponent } from './templates/header-admin/header-admin.component';
 
 @NgModule({
@@ -27,16 +27,16 @@ import { HeaderAdminComponent } from './templates/header-admin/header-admin.comp
     HeaderComponent,
     FooterComponent,
     HeaderAdminComponent,
-    AdminComponent   // ← adicionado corretamente
+    InternaAdminComponent   // 👈 nome correto da classe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     ReactiveFormsModule,
-    FormsModule,      // ← necessário para ngModel
+    FormsModule,      
     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

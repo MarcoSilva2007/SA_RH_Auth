@@ -4,7 +4,7 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegistroComponent } from './views/registro/registro.component';
 import { InternaComponent } from './views/interna/interna.component';
-import { AdminComponent } from './views/interna-admin/interna-admin.component';
+import { InternaAdminComponent } from './views/interna-admin/interna-admin.component';
 import { CurriculosComponent } from './views/curriculos/curriculos.component';
 import { VagasComponent } from './views/vagas/vagas.component';
 import { AuthGuard } from './guardas/auth.guard';
@@ -21,8 +21,9 @@ const routes: Routes = [
   { path: 'interna', component: InternaComponent, canActivate: [AuthGuard] },
 
   // Painel admin
-  { path: 'interna-admin', component: AdminComponent, canActivate: [AuthGuard] },
+  { path: 'interna-admin', component: InternaAdminComponent, canActivate: [AuthGuard] },
 
+  // Rota coringa
   { path: '**', redirectTo: 'home' },
 ];
 
