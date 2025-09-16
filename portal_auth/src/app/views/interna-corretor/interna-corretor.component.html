@@ -1,0 +1,77 @@
+<div class="corretor-container">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a routerLink="/" class="logo">Imobiliária Luxxury</a>
+    <div class="navItens">
+      <a (click)="setAba('meus-imoveis')" class="navLink" [class.active]="abaAtiva === 'meus-imoveis'">Meus Imóveis</a>
+      <a (click)="setAba('interessados')" class="navLink" [class.active]="abaAtiva === 'interessados'">Interessados</a>
+      <a (click)="logout()" class="navLink">Sair</a>
+    </div>
+  </nav>
+
+  <!-- Meus Imóveis -->
+  <section *ngIf="abaAtiva === 'meus-imoveis'" class="listar-imoveis">
+    <h2>Meus Imóveis</h2>
+    <div class="container-cards">
+      <div class="card" *ngFor="let imovel of meusImoveis">
+        <img [src]="imovel.foto || 'https://via.placeholder.com/150'" alt="Foto do imóvel" />
+        <div class="card-body">
+          <h3 class="card-title">{{ imovel.nome }}</h3>
+          <p class="card-text">{{ imovel.descricao }}</p>
+          <p class="card-text">{{ imovel.cidade }}</p>
+          <p class="card-text">R$ {{ imovel.valor }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interessados -->
+  <section *ngIf="abaAtiva === 'interessados'" class="interessados-section">
+    <div class="interessados-header">
+      <h2>Interessados</h2>
+      <button class="btn-cadastrar" (click)="cadastrarNovoInteressado()">
+        {{ mostrarForm ? 'Voltar' : 'Cadastrar Interessado' }}
+      </button>
+    </div>
+
+    <!-- Lista de Interessados -->
+    <table *ngIf="!mostrarForm">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Mensagem</th>
+          <th>Imóvel</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let interessado of interessados">
+          <td>{{ interessado.id }}</td>
+          <td>{{ interessado.nome }}</td>
+          <td>{{ interessado.email }}</td>
+          <td>{{ interessado.telefone }}</td>
+          <td>{{ interessado.mensagem }}</td>
+          <td>{{ interessado.imovelId }}</td>
+          <td>
+            <button (click)="editarInteressado(interessado)">✏️</button>
+            <button (click)="excluirInteressado(interessado.id)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Formulário de cadastro/edição de Interessado -->
+    <div *ngIf="mostrarForm" class="form-cadastro">
+      <h3>{{ novoInteressado.id === 0 ? 'Cadastrar Interessado' : 'Editar Interessado' }}</h3>
+      <input type="text" [(ngModel)]="novoInteressado.nome" placeholder="Nome" />
+      <input type="email" [(ngModel)]="novoInteressado.email" placeholder="Email" />
+      <input type="text" [(ngModel)]="novoInteressado.telefone" placeholder="Telefone" />
+      <textarea [(ngModel)]="novoInteressado.mensagem" placeholder="Mensagem"></textarea>
+      <input type="number" [(ngModel)]="novoInteressado.imovelId" placeholder="Código do Imóvel" />
+      <button (click)="salvarInteressado()">{{ novoInteressado.id === 0 ? 'Cadastrar' : 'Salvar Alterações' }}</button>
+    </div>
+  </section>
+</div>

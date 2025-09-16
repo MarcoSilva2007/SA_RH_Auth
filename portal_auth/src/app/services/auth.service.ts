@@ -7,52 +7,52 @@ import { map, Observable, switchMap, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3001/usuarios';
-  private readonly CHAVE_AUTH = 'usuarioLogado';
+  private apiUrl = 'http://localhost:3001/clientes';
+  private readonly CHAVE_AUTH = 'clienteLogado';
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  // Registrar novo usuário
-  registrar(usuario: any): Observable<any> {
-    return this.http.get<any[]>(`${this.apiUrl}?email=${usuario.email}`).pipe(
+  // Registrar novo cliente
+  registrar(cliente: any): Observable<any> {
+    return this.http.get<any[]>(`${this.apiUrl}?email=${cliente.email}`).pipe(
       switchMap((res) => {
         if (res.length > 0) {
-          return throwError(() => new Error('Usuário já cadastrado'));
+          return throwError(() => new Error('Cliente já cadastrado'));
         }
-        return this.http.post<any>(this.apiUrl, usuario);
+        return this.http.post<any>(this.apiUrl, cliente);
       })
     );
   }
 
   // Login
   login(credenciais: { email: string; senha: string }): Observable<any> {
-    const admin = {
+    const corretor = {
       id: '1',
-      nome: 'Admin',
-      email: 'admin@rh.connect.com',
-      senha: 'admin1234',
-      permissao: 'admin',
+      nome: 'Corretor',
+      email: 'corretor@rh.connect.com',
+      senha: 'corretor1234',
+      permissao: 'corretor',
     };
 
     return this.http.get<any[]>(this.apiUrl).pipe(
-      map((usuarios) => {
-        // Verificar se é o admin
+      map((clientes) => {
+        // Verificar se é o corretor
         if (
-          credenciais.email === admin.email &&
-          credenciais.senha === admin.senha
+          credenciais.email === corretor.email &&
+          credenciais.senha === corretor.senha
         ) {
-          localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(admin));
-          return admin;
+          localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(corretor));
+          return corretor;
         }
 
-        // Procurar usuário normal
-        const usuario = usuarios.find(
-          (u) => u.email === credenciais.email && u.senha === credenciais.senha
+        // Procurar cliente normal
+        const cliente = clientes.find(
+          (c) => c.email === credenciais.email && c.senha === credenciais.senha
         );
 
-        if (usuario) {
-          localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(usuario));
-          return usuario;
+        if (cliente) {
+          localStorage.setItem(this.CHAVE_AUTH, JSON.stringify(cliente));
+          return cliente;
         }
 
         return null;
@@ -66,13 +66,13 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  // Verifica se o usuário está autenticado
+  // Verifica se o cliente está autenticado
   estaAutenticado(): boolean {
     return !!localStorage.getItem(this.CHAVE_AUTH);
   }
 
-  // Retorna o usuário logado
-  usuarioAtual(): any {
+  // Retorna o cliente logado
+  clienteAtual(): any {
     return JSON.parse(localStorage.getItem(this.CHAVE_AUTH) || 'null');
   }
 }

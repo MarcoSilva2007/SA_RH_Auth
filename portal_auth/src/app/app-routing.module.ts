@@ -4,9 +4,9 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegistroComponent } from './views/registro/registro.component';
 import { InternaComponent } from './views/interna/interna.component';
-import { InternaAdminComponent } from './views/interna-admin/interna-admin.component';
-import { CurriculosComponent } from './views/curriculos/curriculos.component';
-import { VagasComponent } from './views/vagas/vagas.component';
+import { InternaCorretorComponent } from './views/interna-corretor/interna-corretor.component';
+import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
+import { InteressadosComponent } from './views/interessados/interessados.component';
 import { AuthGuard } from './guardas/auth.guard';
 
 const routes: Routes = [
@@ -16,12 +16,12 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
 
   // Usuários comuns
-  { path: 'curriculos', component: CurriculosComponent, canActivate: [AuthGuard] },
-  { path: 'vagas', component: VagasComponent, canActivate: [AuthGuard] },
+  { path: 'meus-imoveis', component: MeusImoveisComponent, canActivate: [AuthGuard] },
+  { path: 'interessados', component: InteressadosComponent, canActivate: [AuthGuard] },
   { path: 'interna', component: InternaComponent, canActivate: [AuthGuard] },
 
   // Painel admin
-  { path: 'interna-admin', component: InternaAdminComponent, canActivate: [AuthGuard] },
+  { path: 'interna-corretor', component: InternaCorretorComponent, canActivate: [AuthGuard] },
 
   // Rota coringa
   { path: '**', redirectTo: 'home' },

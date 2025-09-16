@@ -8,18 +8,18 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./interna.component.scss']
 })
 export class InternaComponent implements OnInit {
-  usuario: any = {};
+  cliente: any = {}; // substituído 'usuario' por 'cliente'
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    this.carregarUsuario();
+    this.carregarCliente();
   }
 
-  carregarUsuario() {
-    this.usuario = this.authService.usuarioAtual();
+  carregarCliente() {
+    this.cliente = this.authService.clienteAtual(); // supondo que AuthService tenha método clienteAtual()
     
-    if (!this.usuario || Object.keys(this.usuario).length === 0) {
+    if (!this.cliente || Object.keys(this.cliente).length === 0) {
       this.router.navigate(['/login']);
     }
   }

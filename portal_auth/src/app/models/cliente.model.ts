@@ -1,4 +1,4 @@
-export class User {
+export class Cliente {
   constructor(
     public id: number,
     public nome: string,
@@ -17,8 +17,8 @@ export class User {
   }
 
   // JSON to OBJ
-  static fromMap(map: any): User {
-    return new User(
+  static fromMap(map: any): Cliente {
+    return new Cliente(
       map.id,
       map.nome,
       map.email,
