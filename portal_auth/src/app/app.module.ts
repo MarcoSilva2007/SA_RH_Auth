@@ -6,13 +6,13 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { InternaComponent } from './views/interna/interna.component';
 import { RegistroComponent } from './views/registro/registro.component';
-import { CurriculosComponent } from './views/curriculos/curriculos.component';
-import { VagasComponent } from './views/vagas/vagas.component';
+import { MeusImoveisComponent } from './views/meus-imoveis/meus-imoveis.component';
+import { InteressadosComponent } from './views/interessados/interessados.component';
 import { HeaderComponent } from './templates/header/header.component';
 import { FooterComponent } from './templates/footer/footer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { InternaAdminComponent } from './views/interna-admin/interna-admin.component'; 
+import { InternaCorretorComponent } from './views/interna-corretor/interna-corretor.component'; 
 import { HeaderAdminComponent } from './templates/header-admin/header-admin.component';
 
 @NgModule({
@@ -22,12 +22,12 @@ import { HeaderAdminComponent } from './templates/header-admin/header-admin.comp
     LoginComponent,
     InternaComponent,
     RegistroComponent,
-    CurriculosComponent,
-    VagasComponent,
+    MeusImoveisComponent,
+    InteressadosComponent,
     HeaderComponent,
     FooterComponent,
     HeaderAdminComponent,
-    InternaAdminComponent   // 👈 nome correto da classe
+    InternaCorretorComponent
   ],
   imports: [
     BrowserModule,

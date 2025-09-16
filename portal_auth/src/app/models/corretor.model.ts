@@ -1,10 +1,10 @@
-export class Admin {
+export class Corretor {
   constructor(
     public id: number,
     public nome: string,
     public email: string,
     public senha: string,
-    public permissao: string // ex: 'admin'
+    public permissao: string // ex: 'corretor'
   ) {}
 
   // OBJ to JSON
@@ -19,8 +19,8 @@ export class Admin {
   }
 
   // JSON to OBJ
-  static fromMap(map: any): Admin {
-    return new Admin(
+  static fromMap(map: any): Corretor {
+    return new Corretor(
       map.id,
       map.nome,
       map.email,
